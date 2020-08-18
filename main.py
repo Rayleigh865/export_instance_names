@@ -6,11 +6,11 @@ def main():
 		print("引数の数が合いません")
 		sys.exit()
 
-	input_word = sys.argv[1].split('-')
+	input_word = sys.argv[1].split('~')
 	start = int(re.sub("\\D", "", input_word[0]))
-	start_moji = re.findall(r'[a-zA-z.]+', input_word[0])
+	start_moji = re.findall(r'[a-zA-z.-]+', input_word[0])
 	end = int(re.sub("\\D", "", input_word[1]))
-	end_moji = re.findall(r'[a-zA-z.]+', input_word[1])
+	end_moji = re.findall(r'[a-zA-z.-]+', input_word[1])
 	
 	try:
 		output=export(start,start_moji[0],end,end_moji[0])
